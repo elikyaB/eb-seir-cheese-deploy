@@ -1,0 +1,25 @@
+body {
+    margin: 0 auto;
+    background-image: url('https://image.freepik.com/free-vector/seamless-cheese-icon-cheese-pattern-background_35949-4.jpg');
+}
+
+img {
+    width: 30vw;
+}
+
+section {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+input {
+    width: 30vw;
+}
+
+form {
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+    body {width: 70%}
+}

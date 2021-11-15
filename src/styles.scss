@@ -1,0 +1,54 @@
+// ---------------------
+// Variables
+// ---------------------
+$maincolor: rgb(248, 223, 176);
+$contrastcolor: black;
+$imagesize: 30vw;
+
+// ---------------------
+// Mixins
+// ---------------------
+
+// @mixin white-text-black-bg {
+//     color: $contrastcolor;
+//     background-color: $maincolor;
+// }
+
+// @mixin black-text-white-bg {
+//     color: $maincolor;
+//     background-color: $contrastcolor
+// }
+
+// ---------------------------------
+// Body
+// ---------------------------------
+body {
+    margin: 0 auto;
+    width: 100vw;
+    background-image: url('https://image.freepik.com/free-vector/cheese-background-seamless-pattern_7341-58.jpg')
+}
+
+
+// ---------------------------------
+// Header
+// ---------------------------------
+
+nav {
+    // @include white-text-black-bg;
+    display: flex;
+    justify-content: flex-start;
+
+    a{
+        // @include white-text-black-bg;
+
+        div {
+            margin: 10px;
+            font-size: large
+        }
+    }
+}
+
+img {
+    width: $imagesize;
+    
+}
