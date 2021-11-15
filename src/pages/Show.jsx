@@ -45,7 +45,7 @@ const Show = (props) => {
     }
 
     const removeCheese = () => {
-      props.deletePeople(chez._id)
+      props.deleteCheese(chez._id)
       navigate("/")
     }
 
@@ -72,17 +72,23 @@ const Show = (props) => {
           placeholder="Image URL"
           onChange={handleChange}
         />
-        <input type="submit" value="Update" />
+        <div className='buttons'>
+          <div>
+            <button onClick={removeCheese}>DELETE</button>
+          </div>
+          <div>
+            <input type="submit" value="UPDATE" id='button' />
+          </div>
+        </div>
       </form>
     );
 
     return (
-      <div className="cheese">
-        <h1>{chez.name}</h1>
-        <h2>{chez.title}</h2>
+      <div className="chez">
+        <h3>{chez.name} - {chez.countryOfOrigin}</h3>
         <img src={chez.image} alt={chez.name} />
         {form}
-        <button onClick={removeCheese}>DELETE</button>
+        
       </div>
     );
   } else {

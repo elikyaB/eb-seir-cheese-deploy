@@ -3,7 +3,6 @@
 // ---------------------
 $maincolor: rgb(248, 223, 176);
 $contrastcolor: black;
-$imagesize: 30vw;
 
 // ---------------------
 // Mixins
@@ -28,6 +27,7 @@ body {
     background-image: url('https://image.freepik.com/free-vector/cheese-background-seamless-pattern_7341-58.jpg')
 }
 
+body * {text-decoration: none;}
 
 // ---------------------------------
 // Header
@@ -36,19 +36,77 @@ body {
 nav {
     // @include white-text-black-bg;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    background-color: $maincolor;
 
     a{
         // @include white-text-black-bg;
 
         div {
-            margin: 10px;
-            font-size: large
+            font-size: large;
+            h1 {margin: 1vh auto;}
         }
     }
 }
 
-img {
-    width: $imagesize;
-    
+// ---------------------------------
+// Index
+// ---------------------------------
+
+input {width: 30vw;}
+
+.list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    .cheese {
+        h3 {margin: 0 auto;}
+        img {width: 40vw;}
+        background-color: $maincolor;
+        margin: 1vh 2vw;
+        padding: 0 5px;
+        border: 1px solid $contrastcolor;
+        border-radius: 10px;
+    }
+}
+
+// ---------------------------------
+// Show
+// ---------------------------------
+
+.chez {
+    h3 {margin: 1vh auto;}
+    img {width: 60vw;}
+    background-color: $maincolor;
+    margin: 3vh 15vw;
+    // padding: 0 5px;
+    border: 1px solid $contrastcolor;
+    border-radius: 10px;
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        input {width: 84%}
+        button, #button, .buttons {width: 100%;}
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {    
+    section {
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+
+    .list > .cheese {
+        img {width: 24vw;}
+        margin: 5px;
+    }
+
+    input {width: 25vw;}
 }

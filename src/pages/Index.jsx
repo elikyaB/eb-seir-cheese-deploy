@@ -40,14 +40,14 @@ const Index = (props) => {
         type="text"
         value={newForm.name}
         name="name"
-        placeholder="name"
+        placeholder="Name"
         onChange={handleChange}
       />
       <input
         type="text"
         value={newForm.countryOfOrigin}
         name="countryOfOrigin"
-        placeholder="Country of Origin"
+        placeholder="Origin"
         onChange={handleChange}
       />
       <input
@@ -58,7 +58,7 @@ const Index = (props) => {
         onChange={handleChange}
       />
       <br />
-      <input type="submit" value="Add Cheese" />
+      <input type="submit" value="Add a Cheese" />
     </form>
   );
 
@@ -66,16 +66,18 @@ const Index = (props) => {
     return (
       <section>
         {form}
-        {props.cheese.map((chez) => {
-          return (
-            <div key={chez._id} className="cheese">
-                <Link to={`/cheese/${chez._id}`}>
-                  <h1>{chez.name}</h1>
-                </Link>
-                <img src={chez.image} alt={chez.name} />
-            </div>
-          );
-        })}
+        <div className="list">
+          {props.cheese.map((chez) => {
+            return (
+              <div key={chez._id} className="cheese">
+                  <Link to={`/cheese/${chez._id}`}>
+                    <h3>{chez.name}</h3>
+                  </Link>
+                  <img src={chez.image} alt={chez.name} />
+              </div>
+            );
+          })}
+        </div>
       </section>
     );
   } else {
